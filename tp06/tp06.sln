@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tp06_invertirNumero", "tp06_invertirNumero\tp06_invertirNumero.csproj", "{AB233B34-09C8-42EF-B9F1-43CDCF924726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvertirNumero", "tp06_invertirNumero\InvertirNumero.csproj", "{AB233B34-09C8-42EF-B9F1-43CDCF924726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculadora", "Calculadora\Calculadora.csproj", "{69F45E4F-BAD3-44F8-88F5-54653D08B6D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AB233B34-09C8-42EF-B9F1-43CDCF924726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB233B34-09C8-42EF-B9F1-43CDCF924726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB233B34-09C8-42EF-B9F1-43CDCF924726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F45E4F-BAD3-44F8-88F5-54653D08B6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F45E4F-BAD3-44F8-88F5-54653D08B6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F45E4F-BAD3-44F8-88F5-54653D08B6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F45E4F-BAD3-44F8-88F5-54653D08B6D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
