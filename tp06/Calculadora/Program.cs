@@ -9,69 +9,119 @@ namespace Calculadora
         {
             int accion = 0;
             int rep = 0;
-            int a = 0;
-            int b = 0;
-            int resultado = 0;
+            double x = 0;
+            double y = 0;
+            double resultado = 0;
 
-            Console.WriteLine("1. Suma");
-            Console.WriteLine("2. Resta");
-            Console.WriteLine("3. Producto");
-            Console.WriteLine("4. Cociente");
+            Console.WriteLine("0. Suma (x + y)");
+            Console.WriteLine("1. Resta (x - y)");
+            Console.WriteLine("2. Producto (x * y)");
+            Console.WriteLine("3. Cociente (x / y)");
+            Console.WriteLine("4. Valor absoluto (|x|)");
+            Console.WriteLine("5. Cuadrado (x^2)");
+            Console.WriteLine("6. Raiz cuadrada (x^(1/2))");
+            Console.WriteLine("7. Seno (sin(x))");
+            Console.WriteLine("8. Coseno (cos(x))");
+            Console.WriteLine("9. Parte entera de un decimal (floor(x))");
             do
             {
+                string expresion = "";
                 do
                 {
                     Console.Write(">> Accion: ");
                     accion = Convert.ToInt32(Console.ReadLine());
-                    if (accion < 1 || accion > 4)
+                    if (accion < 0 || accion > 9)
                     {
                         Console.WriteLine("Error!: accion ingresada incorrecta");
                     }
-                } while (accion < 1 || accion > 4);
+                } while (accion < 0 || accion > 9);
 
                 switch (accion)
                 {
+                    case 0:
                     case 1:
-                        Console.WriteLine("Elegiste SUMA");
-                        Console.Write("a: ");
-                        a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("b: ");
-                        b = Convert.ToInt32(Console.ReadLine());
-                        resultado = a + b;
-                        break;
                     case 2:
-                        Console.WriteLine("Elegiste RESTA");
-                        Console.Write("a: ");
-                        a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("b: ");
-                        b = Convert.ToInt32(Console.ReadLine());
-                        resultado = a - b;
-                        break;
                     case 3:
-                        Console.WriteLine("Elegiste PRODUCTO");
-                        Console.Write("a: ");
-                        a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("b: ");
-                        b = Convert.ToInt32(Console.ReadLine());
-                        resultado = a * b;
+                        Console.Write("x: ");
+                        x = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("y: ");
+                        y = Convert.ToDouble(Console.ReadLine());
                         break;
                     case 4:
-                        Console.WriteLine("Elegiste COCIENTE");
-                        Console.Write("a: ");
-                        a = Convert.ToInt32(Console.ReadLine());
-                        do
-                        {
-                            Console.Write("b: ");
-                            b = Convert.ToInt32(Console.ReadLine());
-                            if (b == 0)
-                            {
-                                Console.WriteLine("Error!: el denominador no puede ser 0");
-                            }
-                        } while (b == 0);
-                        resultado = a / b;
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                        Console.Write("x: ");
+                        x = Convert.ToDouble(Console.ReadLine());
                         break;
                 }
-                Console.WriteLine("RESULTADO: {0}", resultado);
+
+                switch (accion)
+                {
+                    case 0:                     
+                        resultado = x + y;
+                        expresion += $"{x}+{y}";
+                        break;
+                    case 1:
+                        resultado = x - y;
+                        expresion += $"{x}-{y}";
+                        break;
+                    case 2:
+                        resultado = x * y;
+                        expresion += $"{x}*{y}";
+                        break;
+                    case 3:
+                        if (y == 0)
+                        {
+                            Console.WriteLine("Error!: el denominador no puede ser 0");
+                            resultado = 0;
+                            expresion += $"{x}/{y}";
+                        } 
+                        else
+                        {
+                            resultado = x / y;
+                            expresion += $"{x}/{y}";
+                        }
+                        break;
+                    case 4:
+                        resultado = Math.Abs(x);
+                        expresion += $"|{x}|";
+                        break;
+                    case 5:
+                        resultado = Math.Pow(x, 2);
+                        expresion += $"{x}^2";
+                        break;
+                    case 6:
+                        if (x < 0)
+                        {
+                            Console.WriteLine("Error!: valor ingresado no pertenece al dominio de la operacion");
+                            resultado = 0;
+                            expresion += $"{x}^(1/2)";
+                        }
+                        else
+                        {
+                            resultado = Math.Sqrt(x);
+                            expresion += $"{x}^(1/2)";
+                        }
+                        
+                        break;
+                    case 7:
+                        resultado = Math.Sin(x);
+                        expresion += $"sin({x})";
+                        break;
+                    case 8:
+                        resultado = Math.Cos(x);
+                        expresion += $"cos({x})";
+                        break;
+                    case 9:
+                        resultado = Math.Floor(x);
+                        expresion += $"floor({x})";
+                        break;
+                }
+
+                Console.WriteLine($"EL RESULTADO DE {expresion} ES {resultado}");
 
                 do
                 {
