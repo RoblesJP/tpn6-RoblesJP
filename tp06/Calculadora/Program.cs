@@ -105,7 +105,6 @@ namespace Calculadora
                             resultado = Math.Sqrt(x);
                             expresion += $"{x}^(1/2)";
                         }
-                        
                         break;
                     case 7:
                         resultado = Math.Sin(x);
